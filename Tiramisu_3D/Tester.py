@@ -151,7 +151,6 @@ for name in names:
     root_path = '/home/uavws/pranjal/MICCAI_BraTS_2018_Data_Training/test/LGG/'+name+'/'
     path = root_path + name +'_'
 
-    mask  =  np.uint8(nib.load(root_path+'get_2D_tiramisu.nii.gz').get_data())
     brain_mask = np.uint8(nib.load(root_path + 'mask.nii.gz').get_data())
     seg   =  np.uint8(nib.load(path+'seg.nii.gz').get_data())
     seg[(brain_mask != 0) * (seg <= 0)] = 5 #Brain tissue
